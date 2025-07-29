@@ -29,3 +29,40 @@ The repository includes:
 ### Task 5 – PHP Command-Line Script
 - **Goal:** List processes and save logs in a selected format.
 
+## Ruby Automation Project – `project.rb` for windows
+
+### Purpose
+
+Automates organization of the `~/Downloads` folder by:
+
+- **Categorizing files** into folders like `Images`, `Videos`, `Documents`, etc.
+- **Detecting duplicates** using SHA-256 hash.
+- **Extracting archives** (`.zip`, `.rar`, `.7z`) into an "Extracted" folder.
+- **Archiving old/unused files** based on last modified time.
+- **Logging** all activity to `activity.log`.
+- **Saving clipboard text** to a timestamped file (avoiding duplicates).
+- **Sending desktop notifications**.
+
+### Key Folders Created
+- `Sorted/` – Categorized files
+- `Duplicates/` – Identified duplicates
+- `Unused/` – Files not used in over 7 days
+- `Clipboard/` – Clipboard logs
+- `activity.log` – History of all operations
+
+### Dependencies
+- `fileutils`
+- `digest`
+- `clipboard`
+- `zip`
+- `open3`
+- `rubygems`
+- `BurntToast`
+
+### Loop Behavior
+Runs continuously every 10 seconds:
+1. Sorts and moves files.
+2. Extracts archives.
+3. Moves unused files.
+4. Saves new clipboard text.
+5. Logs changes and notifies user.
